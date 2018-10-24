@@ -33,39 +33,58 @@ var cardsInPlay = [];
 
  var checkForMatch = function (){
 
- 	if (cardsInPlay[0] === cardsInPlay[1]) {
-console.log("You found a match!");
-} else {
-console.log("Sorry, try again.");
+ 	if(cardsInPlay[0] === cardsInPlay[1]) {
+alert("You found a match!");
+} 
+else 
+
+{
+alert("Sorry, try again.");
 }
 
  }
+
+
+
 var flipCard = function(cardId){
-	
-var carOne;
-var cardTwo;
-var suit;
-var cardImage;
 
-var cardOne = cards[0];
-cardsInPlay.push(cards[cardId].rank);
-console.log("User flipped  " + cards[cardId].rank);
+ 
+
+  var suit;
+
+  var cardImage;
+
+  if (cardsInPlay.length === 0){  
+
+    var cardOne = cards[0];  
+
+    cardsInPlay.push(cards[cardId].rank); 
+
+  } 
+
+  else{   
+
+    var cardTwo = cards[2];
+
+    cardsInPlay[1] = (cards[cardId].rank);
+
+  } 
 
 
-//this code is accessing the entire first object in the cards
-var cardTwo = cards[2];
-cardsInPlay.push(cards[cardId].rank);
-console.log("User flipped " + cards[cardId].rank);
+  console.log("User flipped " + cards[cardId].rank);
+
+  console.log(cards[cardId].cardImage);
+
+  console.log(cards[cardId].suit);
 
 
-console.log(cards[cardId].cardImage);
+  checkForMatch();
 
-
-console.log(cards[cardId].suit);
-
-checkForMatch();
 
 }
 
-  flipCard(0);
+flipCard(0);
   flipCard(2);
+
+
+ 
